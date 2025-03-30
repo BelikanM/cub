@@ -1,0 +1,119 @@
+/* Styles communs à toutes les pages */
+.page-container {
+  padding: 20px 16px 80px 16px; /* Espace en bas pour la barre de navigation */
+  max-width: 800px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background-color: #f8fafc;
+}
+
+.page-header {
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.page-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  color: #64748b;
+  font-size: 16px;
+}
+
+/* Conteneurs et cartes */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-image {
+  height: 160px;
+  background-color: #e2e8f0;
+}
+
+.card-content {
+  padding: 16px;
+}
+
+.card-content h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #1e293b;
+}
+
+.card-content p {
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* Placeholders pour démo */
+.placeholder {
+  background-color: #e2e8f0;
+  position: relative;
+}
+
+.placeholder::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  animation: placeholderShimmer 1.5s infinite;
+}
+
+@keyframes placeholderShimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Sections */
+section {
+  margin-bottom: 36px;
+}
+
+section h2 {
+  font-size: 20px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  color: #334155;
+}
+
+/* Boutons */
+.action-button {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.action-button:hover {
+  background-color: #2563eb;
+}
+

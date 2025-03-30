@@ -1,0 +1,38 @@
+// ... existing code ...
+
+model User {
+  id        String    @id @default(uuid())
+  name      String?
+  email     String    @unique
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  medias    Media[]
+  // ... existing code ...
+}
+
+model Media {
+  id          String    @id @default(uuid())
+  fileName    String
+  originalName String
+  fileType    String
+  fileSize    Int
+  url         String
+  publicId    String?
+  mimeType    String
+  category    MediaCategory
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+enum MediaCategory {
+  IMAGE
+  VIDEO
+  AUDIO
+  DOCUMENT
+  OTHER
+}
+
